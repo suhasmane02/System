@@ -34,7 +34,7 @@ struct shared_object* create_shared_object(struct shared_object *so)
 		return so;
 	}
 
-	int size = so->object_size * so->object_count;
+	int size = so->object_size;// * so->object_count;
 
 	if(ftruncate(shm_fd, size) == -1)
 	{
